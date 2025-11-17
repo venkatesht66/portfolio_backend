@@ -45,6 +45,10 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 4000;
 const MONGO = process.env.MONGO_URI || '';
 
+app.get("/", (req, res) => {
+  res.send("Backend running");
+});
+
 mongoose.connect(MONGO)
   .then(async () => {
     console.log('Mongo connected');
