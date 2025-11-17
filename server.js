@@ -29,12 +29,12 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use('/api/auth', authRoutes);
-app.use('/api/projects', projectRoutes);
-app.use('/api/contact', contactRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api/experiences', experienceRoutes);
-app.use('/api/certifications', certificationRoutes);
+app.use('/auth', authRoutes);
+app.use('/projects', projectRoutes);
+app.use('/contact', contactRoutes);
+app.use('/admin', adminRoutes);
+app.use('/experiences', experienceRoutes);
+app.use('/certifications', certificationRoutes);
 
 // global error catch
 app.use((err, req, res, next) => {
