@@ -15,10 +15,18 @@ const certificationRoutes = require('./routes/certificationRoutes');
 
 
 const app = express();
+
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://portfolio-snowy-eight-curyi5ea91.vercel.app"
+];
+
 app.use(cors({
-  origin: ["https://portfolio-snowy-eight-curyi5ea91.vercel.app/"], 
+  origin: allowedOrigins,
+  methods: "GET,POST,PUT,DELETE",
   credentials: true
 }));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
