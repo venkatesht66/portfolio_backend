@@ -36,7 +36,6 @@ app.use('/admin', adminRoutes);
 app.use('/experiences', experienceRoutes);
 app.use('/certifications', certificationRoutes);
 
-// global error catch
 app.use((err, req, res, next) => {
   console.error('GLOBAL ERROR HANDLER:', err && (err.stack || err.message || err));
   res.status(err.status || 500).json({ message: err.message || 'Internal Server Error' });
